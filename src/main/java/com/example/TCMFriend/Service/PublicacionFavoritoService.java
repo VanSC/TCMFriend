@@ -14,6 +14,6 @@ public interface PublicacionFavoritoService {
 	public String addFavPub(PublicacionesFavoritosDTO publicacionesfavoritosDTO);
 	public List<PublicacionesFavoritos> obtenerPublicacion();
 	public PublicacionesFavoritos findUsername(String username);
-	//public String eliminarPublicacion(int id);
+	public String eliminarPublicacion(int id);
 	//public String updateUsuario(String email, UsuarioDTO usuarioDTO);
 }

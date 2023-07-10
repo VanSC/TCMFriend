@@ -39,10 +39,10 @@ public class PublicacionController {
 		return pub;
 	}
 	
-	@PutMapping(path = "/actualizar/{email}")
-    public String actualizarPublicacion(@PathVariable String email, @RequestBody PublicacionDTO publicacionDTO){
+	@PutMapping(path = "/actualizar/{id}")
+    public String actualizarPublicacion(@PathVariable int id, @RequestBody PublicacionDTO publicacionDTO){
 		
-		String publicacion = publicacionService.updatePublicacion(email, publicacionDTO);
+		String publicacion = publicacionService.updatePublicacion(id, publicacionDTO);
 		
 		return publicacion;
     }

@@ -63,17 +63,21 @@ public class PublicacionIMPL implements PublicacionService {
 	}
 
 	@Override
-	public String updatePublicacion(String email, PublicacionDTO publicacionDTO) {
-		Publicacion publi_username = publicacionRepo.findByEmail(email);
-			publi_username.setTitulo(publicacionDTO.getTitulo());
-			publi_username.setCategoria(publicacionDTO.getCategoria());
-			publi_username.setContenido(publicacionDTO.getContenido());
-			publi_username.setUrl(publicacionDTO.getUrl());
-			publi_username.setEmail(publicacionDTO.getEmail());
-			publi_username.setFecha_pub(publicacionDTO.getFecha_pub());
-		publicacionRepo.save(publi_username);
-
-		return publi_username.getTitulo();
+	public String updatePublicacion(int id, PublicacionDTO publicacionDTO) {
+	    Optional<Publicacion> optionalPublicacion = publicacionRepo.findById(id);
+	    if (optionalPublicacion.isPresent()) {
+	        Publicacion publicacion = optionalPublicacion.get();
+	        publicacion.setTitulo(publicacionDTO.getTitulo());
+	        publicacion.setCategoria(publicacionDTO.getCategoria());
+	        publicacion.setContenido(publicacionDTO.getContenido());
+	        publicacion.setUrl(publicacionDTO.getUrl());
+	        publicacion.setEmail(publicacionDTO.getEmail());
+	        publicacion.setFecha_pub(publicacionDTO.getFecha_pub());
+	        publicacionRepo.save(publicacion);
+	        return publicacion.getTitulo();
+	    } else {
+	        return "No se encontró ninguna publicación";
+	    }
 	}
 
 	@Override

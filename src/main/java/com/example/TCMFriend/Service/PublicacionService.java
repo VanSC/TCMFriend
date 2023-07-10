@@ -20,7 +20,7 @@ public interface PublicacionService {
     
     public Publicacion findCategoria(String categoria);
     
-    public String updatePublicacion(String email, PublicacionDTO publicacionDTO);
+    public String updatePublicacion(int id, PublicacionDTO publicacionDTO);
 	
 	//String editarPublicacion(int id, PublicacionDTO publicacionDTO);
     public String eliminarPublicacion(int id);

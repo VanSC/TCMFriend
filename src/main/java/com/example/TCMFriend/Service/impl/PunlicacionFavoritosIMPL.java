@@ -38,10 +38,10 @@ public class PunlicacionFavoritosIMPL implements PublicacionFavoritoService{
 	}
 
 	@Override
-	public PublicacionesFavoritos findUsername(String email) {
-		return publicacionesfavoritosRepo.findByEmail(email);
+	public PublicacionesFavoritos findUsername(String username) {
+		return publicacionesfavoritosRepo.findByUsername(username);
 	}
-/**
+	
 	@Override
 	public String eliminarPublicacion(int id) {
 	    Optional<PublicacionesFavoritos> publicacionOptional = publicacionesfavoritosRepo.findById(id);
@@ -52,6 +52,6 @@ public class PunlicacionFavoritosIMPL implements PublicacionFavoritoService{
 	    } else {
 	        return "No se encontró ninguna publicación con el ID especificado";
 	    }
-	}*/
+	}
 
 }

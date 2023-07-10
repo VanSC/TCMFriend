@@ -10,6 +10,6 @@ import com.example.TCMFriend.Entity.PublicacionesFavoritos;
 public interface PublicacionFavoritoRepo 
 	extends JpaRepository <PublicacionesFavoritos,Integer>{
 	
-	PublicacionesFavoritos findByEmail(String email);
+	PublicacionesFavoritos findByUsername(String username);
 	
 }
