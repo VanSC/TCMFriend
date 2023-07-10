@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "publicacion")
+@Table(name = "publicacion_favoritos")
 public class PublicacionesFavoritos {
 	@Id
     @Column(name="publicacion_id", length = 45)
@@ -32,8 +32,8 @@ public class PublicacionesFavoritos {
 	@Column(name="username", length = 200)
 	private String username;
 	
-	@Column(name="log_username", length = 200)
-	private String logusername;
+	@Column(name="email", length = 200)
+	private String email;
 	
 	@Column(name = "publicacion_fecha", nullable = false, updatable = false)
 	@CreationTimestamp
@@ -44,7 +44,7 @@ public class PublicacionesFavoritos {
 	}
 
 	public PublicacionesFavoritos(int publicacionid, String categoria, String titulo, String contenido, String url,
-			String username, String logusername, String fecha_pub) {
+			String username, String email, String fecha_pub) {
 		super();
 		this.publicacionid = publicacionid;
 		this.categoria = categoria;
@@ -52,7 +52,7 @@ public class PublicacionesFavoritos {
 		this.contenido = contenido;
 		this.url = url;
 		this.username = username;
-		this.logusername = logusername;
+		this.email = email;
 		this.fecha_pub = fecha_pub;
 	}
 
@@ -104,12 +104,12 @@ public class PublicacionesFavoritos {
 		this.username = username;
 	}
 
-	public String getLogusername() {
-		return logusername;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setLogusername(String logusername) {
-		this.logusername = logusername;
+	public void setEmailLogusername(String logusername) {
+		this.email = email;
 	}
 
 	public String getFecha_pub() {
@@ -123,8 +123,8 @@ public class PublicacionesFavoritos {
 	@Override
 	public String toString() {
 		return "PublicacionesFavoritos [publicacionid=" + publicacionid + ", categoria=" + categoria + ", titulo="
-				+ titulo + ", contenido=" + contenido + ", url=" + url + ", username=" + username + ", logusername="
-				+ logusername + ", fecha_pub=" + fecha_pub + "]";
+				+ titulo + ", contenido=" + contenido + ", url=" + url + ", username=" + username + ", email="
+				+ email + ", fecha_pub=" + fecha_pub + "]";
 	}
 	
 }

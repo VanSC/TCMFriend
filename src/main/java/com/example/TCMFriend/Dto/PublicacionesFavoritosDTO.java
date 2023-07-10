@@ -9,14 +9,14 @@ public class PublicacionesFavoritosDTO {
 	private String url;
 	private String username;
 	private String fecha_pub;
-	private String logusername;
+	private String email;
 	
 	public PublicacionesFavoritosDTO() {
 		super();
 	}
 
 	public PublicacionesFavoritosDTO(int publicacionid, String titulo, String categoria, String contenido, String url,
-			String username, String fecha_pub, String logusername) {
+			String username, String fecha_pub, String email) {
 		super();
 		this.publicacionid = publicacionid;
 		this.titulo = titulo;
@@ -25,7 +25,7 @@ public class PublicacionesFavoritosDTO {
 		this.url = url;
 		this.username = username;
 		this.fecha_pub = fecha_pub;
-		this.logusername = logusername;
+		this.email = email;
 	}
 
 	public int getPublicacionid() {
@@ -84,19 +84,19 @@ public class PublicacionesFavoritosDTO {
 		this.fecha_pub = fecha_pub;
 	}
 
-	public String getLogusername() {
-		return logusername;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setLogusername(String logusername) {
-		this.logusername = logusername;
+	public void setEmail(String logusername) {
+		this.email = email;
 	}
 
 	@Override
 	public String toString() {
 		return "PublicacionesFavoritosDTO [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria="
 				+ categoria + ", contenido=" + contenido + ", url=" + url + ", username=" + username + ", fecha_pub="
-				+ fecha_pub + ", logusername=" + logusername + "]";
+				+ fecha_pub + ", email=" + email + "]";
 	}
 
 }

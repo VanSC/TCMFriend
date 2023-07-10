@@ -1,6 +1,7 @@
 package com.example.TCMFriend.Service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -53,17 +54,17 @@ public class PublicacionIMPL implements PublicacionService {
 
 	@Override
 	public Publicacion findEmail(String email) {
-		return publicacionRepo.findEmail(email);
+		return publicacionRepo.findByEmail(email);
 	}
 
 	@Override
 	public Publicacion findCategoria(String categoria) {
-		return publicacionRepo.findCategoria(categoria);
+		return publicacionRepo.findByCategoria(categoria);
 	}
 
 	@Override
 	public String updatePublicacion(String email, PublicacionDTO publicacionDTO) {
-		Publicacion publi_username = publicacionRepo.findEmail(email);
+		Publicacion publi_username = publicacionRepo.findByEmail(email);
 			publi_username.setTitulo(publicacionDTO.getTitulo());
 			publi_username.setCategoria(publicacionDTO.getCategoria());
 			publi_username.setContenido(publicacionDTO.getContenido());
@@ -74,4 +75,16 @@ public class PublicacionIMPL implements PublicacionService {
 
 		return publi_username.getTitulo();
 	}
+
+	@Override
+	public String eliminarPublicacion(int id){
+		    Optional<Publicacion> publicacionOptional = publicacionRepo.findById(id);
+		    
+		    if (publicacionOptional.isPresent()) {
+		        publicacionRepo.deleteById(id);
+		        return "Publicación eliminada con éxito";
+		    } else {
+		        return "No se encontró ninguna publicación con el ID especificado";
+		    }
+		}
 }

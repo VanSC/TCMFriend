@@ -23,4 +23,5 @@ public interface PublicacionService {
     public String updatePublicacion(String email, PublicacionDTO publicacionDTO);
 	
 	//String editarPublicacion(int id, PublicacionDTO publicacionDTO);
+    public String eliminarPublicacion(int id);
 }

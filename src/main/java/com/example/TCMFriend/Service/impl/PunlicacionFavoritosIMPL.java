@@ -4,12 +4,15 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.TCMFriend.Dto.PublicacionesFavoritosDTO;
 import com.example.TCMFriend.Entity.PublicacionesFavoritos;
 import com.example.TCMFriend.Repo.PublicacionFavoritoRepo;
 import com.example.TCMFriend.Service.PublicacionFavoritoService;
-
+@Service
+@Transactional
 public class PunlicacionFavoritosIMPL implements PublicacionFavoritoService{
 	
 	@Autowired
@@ -24,7 +27,7 @@ public class PunlicacionFavoritosIMPL implements PublicacionFavoritoService{
 			publicacionesfavoritosDTO.getUrl();
 			publicacionesfavoritosDTO.getUsername();
 			publicacionesfavoritosDTO.getFecha_pub();
-			publicacionesfavoritosDTO.getLogusername();
+			publicacionesfavoritosDTO.getEmail();
 		publicacionesfavoritosRepo.save(publicacionFav);
 		return publicacionFav.getTitulo();
 	}
@@ -35,10 +38,10 @@ public class PunlicacionFavoritosIMPL implements PublicacionFavoritoService{
 	}
 
 	@Override
-	public PublicacionesFavoritos findUsername(String username) {
-		return publicacionesfavoritosRepo.findUser(username);
+	public PublicacionesFavoritos findUsername(String email) {
+		return publicacionesfavoritosRepo.findByEmail(email);
 	}
-
+/**
 	@Override
 	public String eliminarPublicacion(int id) {
 	    Optional<PublicacionesFavoritos> publicacionOptional = publicacionesfavoritosRepo.findById(id);
@@ -49,6 +52,6 @@ public class PunlicacionFavoritosIMPL implements PublicacionFavoritoService{
 	    } else {
 	        return "No se encontró ninguna publicación con el ID especificado";
 	    }
-	}
+	}*/
 
 }

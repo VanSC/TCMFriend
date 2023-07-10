@@ -52,12 +52,11 @@ public class PublicacionController {
 		Publicacion publi_user = publicacionService.findCategoria(categoria);
 		return ResponseEntity.ok(publi_user);
 	}
-	/**
-	@DeleteMapping("/{id}")
+	@DeleteMapping("eliminar/{id}")
 	public ResponseEntity<String> eliminarPublicacion(@PathVariable int id) {
-	    String resultado = publicacionService.dele;
+	    String resultado = publicacionService.eliminarPublicacion(id);
 	    return ResponseEntity.ok(resultado);
-	}*/
+	}
 
 
 }
