@@ -28,6 +28,6 @@ public interface UsuarioService {
 	
 	//public String updateUsuarioid(int id, UsuarioDTO usuarioDTO);
 
-	String updateUsuario(String email, UsuarioDTO usuarioDTO);
+	public String updateUsuario(String email, UsuarioDTO usuarioDTO);
 
 }

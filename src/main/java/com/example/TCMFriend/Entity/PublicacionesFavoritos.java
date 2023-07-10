@@ -1,30 +1,17 @@
 package com.example.TCMFriend.Entity;
-import java.sql.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
-
 
 @Entity
 @Table(name = "publicacion")
-//@JsonInclude(JsonInclude.Include.NON_NULL)
-
-public class Publicacion {
+public class PublicacionesFavoritos {
 	@Id
     @Column(name="publicacion_id", length = 45)
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,26 +29,30 @@ public class Publicacion {
 	@Column(name="publicacion_url", length = 400)
 	private String url;
 	
-	@Column(name="email", length = 200)
-	private String email;
+	@Column(name="username", length = 200)
+	private String username;
+	
+	@Column(name="log_username", length = 200)
+	private String logusername;
 	
 	@Column(name = "publicacion_fecha", nullable = false, updatable = false)
 	@CreationTimestamp
 	private String fecha_pub;
 
-	public Publicacion() {
+	public PublicacionesFavoritos() {
 		super();
 	}
 
-	public Publicacion(int publicacionid, String categoria, String titulo, String contenido, String url,
-			String email, String fecha_pub) {
+	public PublicacionesFavoritos(int publicacionid, String categoria, String titulo, String contenido, String url,
+			String username, String logusername, String fecha_pub) {
 		super();
 		this.publicacionid = publicacionid;
 		this.categoria = categoria;
 		this.titulo = titulo;
 		this.contenido = contenido;
 		this.url = url;
-		this.email = email;
+		this.username = username;
+		this.logusername = logusername;
 		this.fecha_pub = fecha_pub;
 	}
 
@@ -105,12 +96,20 @@ public class Publicacion {
 		this.url = url;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String username) {
-		this.email = username;
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getLogusername() {
+		return logusername;
+	}
+
+	public void setLogusername(String logusername) {
+		this.logusername = logusername;
 	}
 
 	public String getFecha_pub() {
@@ -123,13 +122,9 @@ public class Publicacion {
 
 	@Override
 	public String toString() {
-		return "Publicacion [publicacionid=" + publicacionid + ", categoria=" + categoria + ", titulo=" + titulo
-				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub
-				+ "]";
+		return "PublicacionesFavoritos [publicacionid=" + publicacionid + ", categoria=" + categoria + ", titulo="
+				+ titulo + ", contenido=" + contenido + ", url=" + url + ", username=" + username + ", logusername="
+				+ logusername + ", fecha_pub=" + fecha_pub + "]";
 	}
-	
-	/**@ManyToOne(optional = false,fetch = FetchType.EAGER)
-	@JoinColumn(name="usuario_id",nullable = false)
-	private Usuario usuario;*/
 	
 }

@@ -14,7 +14,13 @@ public interface PublicacionService {
 
     String addPublicacion(PublicacionDTO publicacionDTO);
     
-    public Publicacion encontrarPublicacion(int id);
+    //public Publicacion encontrarPublicacion(int id);
+    
+    public Publicacion findEmail(String email);
+    
+    public Publicacion findCategoria(String categoria);
+    
+    public String updatePublicacion(String email, PublicacionDTO publicacionDTO);
 	
-	String editarPublicacion(int id, PublicacionDTO publicacionDTO);
+	//String editarPublicacion(int id, PublicacionDTO publicacionDTO);
 }

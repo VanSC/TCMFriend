@@ -1,31 +1,31 @@
 package com.example.TCMFriend.Dto;
 
-import com.example.TCMFriend.Entity.Usuario;
-
-public class PublicacionDTO {
+public class PublicacionesFavoritosDTO {
 	
 	private int publicacionid;
 	private String titulo;
 	private String categoria;
 	private String contenido;
 	private String url;
-	private String email;
+	private String username;
 	private String fecha_pub;
+	private String logusername;
 	
-	public PublicacionDTO() {
+	public PublicacionesFavoritosDTO() {
 		super();
 	}
 
-	public PublicacionDTO(int publicacionid, String titulo, String categoria, String contenido, String url,
-			String email, String fecha_pub) {
+	public PublicacionesFavoritosDTO(int publicacionid, String titulo, String categoria, String contenido, String url,
+			String username, String fecha_pub, String logusername) {
 		super();
 		this.publicacionid = publicacionid;
 		this.titulo = titulo;
 		this.categoria = categoria;
 		this.contenido = contenido;
 		this.url = url;
-		this.email = email;
+		this.username = username;
 		this.fecha_pub = fecha_pub;
+		this.logusername = logusername;
 	}
 
 	public int getPublicacionid() {
@@ -68,12 +68,12 @@ public class PublicacionDTO {
 		this.url = url;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String username) {
-		this.email = username;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getFecha_pub() {
@@ -84,11 +84,19 @@ public class PublicacionDTO {
 		this.fecha_pub = fecha_pub;
 	}
 
+	public String getLogusername() {
+		return logusername;
+	}
+
+	public void setLogusername(String logusername) {
+		this.logusername = logusername;
+	}
+
 	@Override
 	public String toString() {
-		return "PublicacionDTO [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria=" + categoria
-				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub
-				+ "]";
+		return "PublicacionesFavoritosDTO [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria="
+				+ categoria + ", contenido=" + contenido + ", url=" + url + ", username=" + username + ", fecha_pub="
+				+ fecha_pub + ", logusername=" + logusername + "]";
 	}
-}
 
+}
