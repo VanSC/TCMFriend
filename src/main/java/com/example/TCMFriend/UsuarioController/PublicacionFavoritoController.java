@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.TCMFriend.Dto.PublicacionFavoritoDTO;
+import com.example.TCMFriend.Entity.Publicacion;
 import com.example.TCMFriend.Entity.PublicacionFavorito;
 import com.example.TCMFriend.Service.PublicacionFavoritoService;
 
@@ -35,6 +36,12 @@ public class PublicacionFavoritoController {
 	    String pubfav = pubfavoritoService.guardarPublicacionFavorito(publicacionfavoritoDTO);
 	    return pubfav;
 	}
+	
+	@GetMapping("/{username}")
+    public List<PublicacionFavorito> findPublicaciones(@PathVariable String username) {
+        return pubfavoritoService.findPublicacionesByUsername(username);
+    }
+
 	
 	@DeleteMapping("eliminar/{id}")
 	public ResponseEntity<String> eliminarPublicacionFavorito(@PathVariable int id) {

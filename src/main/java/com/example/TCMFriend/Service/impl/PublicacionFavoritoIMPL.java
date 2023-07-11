@@ -32,20 +32,19 @@ public class PublicacionFavoritoIMPL implements PublicacionFavoritoService {
 	            publicacionfavoritoDTO.getCategoria(),
 	            publicacionfavoritoDTO.getContenido(),
 	            publicacionfavoritoDTO.getUrl(),
-	            publicacionfavoritoDTO.getUsername(),
 	            publicacionfavoritoDTO.getEmail(),
-	            publicacionfavoritoDTO.getFecha_pub()
+	            publicacionfavoritoDTO.getFecha_pub(),
+	            publicacionfavoritoDTO.getUsername()
 	    );
 	    publicacionfavoritoRepo.save(pubFav);
 	    return pubFav.getTitulo();
 	}
 
 
-
 	@Override
-	public PublicacionFavorito findUsername(String username) {
-		return publicacionfavoritoRepo.findByUsername(username);
-	}
+	public List<PublicacionFavorito> findPublicacionesByUsername(String username) {
+        return publicacionfavoritoRepo.findByUsername(username);
+    }
 
 	@Override
 	public String eliminarPublicacionfavorito(int id) {

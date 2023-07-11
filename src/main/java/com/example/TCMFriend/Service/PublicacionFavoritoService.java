@@ -14,7 +14,7 @@ public interface PublicacionFavoritoService {
 
     String guardarPublicacionFavorito(PublicacionFavoritoDTO publicacionfavoritoDTO);
  
-    public PublicacionFavorito findUsername(String username);
+    public List<PublicacionFavorito> findPublicacionesByUsername(String username);
     
     public String eliminarPublicacionfavorito(int id);
 }

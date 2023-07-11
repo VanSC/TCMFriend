@@ -1,6 +1,7 @@
 package com.example.TCMFriend.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -16,9 +17,11 @@ public interface PublicacionService {
     
     //public Publicacion encontrarPublicacion(int id);
     
-    public Publicacion findEmail(String email);
+    public List<Publicacion> findEmail(String email);
     
-    public Publicacion findCategoria(String categoria);
+    public List<Publicacion> findCategoria(String categoria);
+    
+    public Optional<Publicacion> findId(int id);
     
     public String updatePublicacion(int id, PublicacionDTO publicacionDTO);
 	

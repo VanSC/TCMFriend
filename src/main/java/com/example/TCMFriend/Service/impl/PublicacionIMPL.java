@@ -49,12 +49,12 @@ public class PublicacionIMPL implements PublicacionService {
 	}*/
 
 	@Override
-	public Publicacion findEmail(String email) {
+	public List<Publicacion> findEmail(String email) {
 		return publicacionRepo.findByEmail(email);
 	}
 
 	@Override
-	public Publicacion findCategoria(String categoria) {
+	public List<Publicacion> findCategoria(String categoria) {
 		return publicacionRepo.findByCategoria(categoria);
 	}
 
@@ -87,4 +87,9 @@ public class PublicacionIMPL implements PublicacionService {
 		        return "No se encontró ninguna publicación con el ID especificado";
 		    }
 		}
+
+	@Override
+	public Optional<Publicacion> findId(int id) {
+		return publicacionRepo.findById(id);
+	}
 }

@@ -98,7 +98,4 @@ public class PublicacionFavoritoDTO {
 				+ categoria + ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub="
 				+ fecha_pub + ", username=" + username + "]";
 	}
-	
-	
-
 }

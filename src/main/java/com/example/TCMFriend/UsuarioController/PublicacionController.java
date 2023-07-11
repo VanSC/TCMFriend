@@ -1,6 +1,7 @@
 package com.example.TCMFriend.UsuarioController;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.TCMFriend.Dto.PublicacionDTO;
 import com.example.TCMFriend.Entity.Publicacion;
+import com.example.TCMFriend.Entity.PublicacionFavorito;
 import com.example.TCMFriend.Service.PublicacionService;
 
 @RestController
@@ -47,10 +49,20 @@ public class PublicacionController {
     }
 	
 	@GetMapping("/{categoria}")
-	public ResponseEntity<Publicacion> findPublicacion(@PathVariable String categoria){
-		Publicacion publi_user = publicacionService.findCategoria(categoria);
-		return ResponseEntity.ok(publi_user);
+	public List<Publicacion> findPublicacion(@PathVariable String categoria){
+		return publicacionService.findCategoria(categoria);
 	}
+	
+	@GetMapping("id/{id}")
+	public Optional<Publicacion> findPublicacionid(@PathVariable int id){
+		return publicacionService.findId(id);
+	}
+	
+	@GetMapping("email/{email}")
+	public List<Publicacion> findPublicacionUser(@PathVariable String email){
+		return publicacionService.findEmail(email);
+	}
+	
 	@DeleteMapping("eliminar/{id}")
 	public ResponseEntity<String> eliminarPublicacion(@PathVariable int id) {
 	    String resultado = publicacionService.eliminarPublicacion(id);
