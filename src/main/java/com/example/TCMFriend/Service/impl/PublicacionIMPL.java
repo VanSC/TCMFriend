@@ -4,17 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.TCMFriend.Dto.PublicacionDTO;
 import com.example.TCMFriend.Entity.Publicacion;
 import com.example.TCMFriend.Repo.PublicacionRepo;
-import com.example.TCMFriend.Repo.UsuarioRepo;
 import com.example.TCMFriend.Service.PublicacionService;
-import com.example.TCMFriend.Service.UsuarioService;
 
 @Service
 @Transactional
@@ -29,7 +25,7 @@ public class PublicacionIMPL implements PublicacionService {
 	}
 
 	@Override
-	public String addPublicacion(PublicacionDTO publicacionDTO) {
+	public String guardarPublicacion(PublicacionDTO publicacionDTO) {
 		Publicacion publicacion = new Publicacion(
 				publicacionDTO.getPublicacionid(),
 				publicacionDTO.getTitulo(),

@@ -4,16 +4,17 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.TCMFriend.Dto.PublicacionesFavoritosDTO;
-import com.example.TCMFriend.Dto.UsuarioDTO;
-import com.example.TCMFriend.Entity.PublicacionesFavoritos;
+import com.example.TCMFriend.Dto.PublicacionFavoritoDTO;
+import com.example.TCMFriend.Entity.PublicacionFavorito;
 
 @Service
 public interface PublicacionFavoritoService {
 	
-	public String addFavPub(PublicacionesFavoritosDTO publicacionesfavoritosDTO);
-	public List<PublicacionesFavoritos> obtenerPublicacion();
-	public PublicacionesFavoritos findUsername(String username);
-	public String eliminarPublicacion(int id);
-	//public String updateUsuario(String email, UsuarioDTO usuarioDTO);
+	public List<PublicacionFavorito> obtenerPublicacion();
+
+    String guardarPublicacionFavorito(PublicacionFavoritoDTO publicacionfavoritoDTO);
+ 
+    public PublicacionFavorito findUsername(String username);
+    
+    public String eliminarPublicacionfavorito(int id);
 }

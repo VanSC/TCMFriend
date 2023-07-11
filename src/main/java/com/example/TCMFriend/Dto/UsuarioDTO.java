@@ -1,7 +1,5 @@
 package com.example.TCMFriend.Dto;
 
-import jakarta.persistence.*;
-import org.springframework.stereotype.Component;
 
 
 public class UsuarioDTO {

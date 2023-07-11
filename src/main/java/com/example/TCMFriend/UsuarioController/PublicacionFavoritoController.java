@@ -13,32 +13,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.TCMFriend.Dto.EventoDTO;
-import com.example.TCMFriend.Entity.Eventos;
-import com.example.TCMFriend.Service.EventoService;
+import com.example.TCMFriend.Dto.PublicacionFavoritoDTO;
+import com.example.TCMFriend.Entity.PublicacionFavorito;
+import com.example.TCMFriend.Service.PublicacionFavoritoService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/v1/evento")
-public class EventoController {
+@RequestMapping("api/v1/publicacionfavorito")
+public class PublicacionFavoritoController {
 	
 	@Autowired
-    private EventoService eventoService;
+	private PublicacionFavoritoService pubfavoritoService;
 	
 	@GetMapping("")
-	public List<Eventos> obtenerEvento(){
-		return eventoService.listarEventos();
+	public List<PublicacionFavorito> obtenerPublicacion(){
+		return pubfavoritoService.obtenerPublicacion();
 	}
 	
 	@PostMapping(path = "/save")
-	public String saveEvento(@RequestBody EventoDTO eventoDTO){
-	    String evento = eventoService.addEvento(eventoDTO);
-	    return evento;
+	public String saveEvento(@RequestBody PublicacionFavoritoDTO publicacionfavoritoDTO){
+	    String pubfav = pubfavoritoService.guardarPublicacionFavorito(publicacionfavoritoDTO);
+	    return pubfav;
 	}
 	
 	@DeleteMapping("eliminar/{id}")
-	public ResponseEntity<String> eliminarEvento(@PathVariable int id) {
-	    String resultado = eventoService.eliminarEvento(id);
+	public ResponseEntity<String> eliminarPublicacionFavorito(@PathVariable int id) {
+	    String resultado = pubfavoritoService.eliminarPublicacionfavorito(id);
 	    return ResponseEntity.ok(resultado);
 	}
 }

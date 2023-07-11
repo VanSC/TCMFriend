@@ -12,7 +12,7 @@ public interface PublicacionService {
 
 	public List<Publicacion> obtenerPublicacion();
 
-    String addPublicacion(PublicacionDTO publicacionDTO);
+    String guardarPublicacion(PublicacionDTO publicacionDTO);
     
     //public Publicacion encontrarPublicacion(int id);
     

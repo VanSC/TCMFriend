@@ -49,7 +49,7 @@ public class UsuarioIMPL implements UsuarioService {
     
     @Override
     public LoginResponse loginUsuario(LoginDTO loginDTO) {
-    	String msg = "";
+    	//String msg = "";
         Usuario usuario1 = usuarioRepo.findByEmail(loginDTO.getEmail());
         if (usuario1 != null) {
             String password = loginDTO.getPassword();

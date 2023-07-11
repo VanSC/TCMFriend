@@ -1,8 +1,5 @@
 package com.example.TCMFriend.Entity;
 
-import java.util.Set;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 

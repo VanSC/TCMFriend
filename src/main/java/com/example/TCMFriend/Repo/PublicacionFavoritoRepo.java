@@ -1,15 +1,10 @@
 package com.example.TCMFriend.Repo;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.TCMFriend.Entity.PublicacionesFavoritos;
+import com.example.TCMFriend.Entity.PublicacionFavorito;
 
 
-public interface PublicacionFavoritoRepo 
-	extends JpaRepository <PublicacionesFavoritos,Integer>{
-	
-	PublicacionesFavoritos findByUsername(String username);
-	
+public interface PublicacionFavoritoRepo extends JpaRepository <PublicacionFavorito,Integer> {
+	PublicacionFavorito findByUsername(String username);
 }

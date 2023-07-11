@@ -1,7 +1,6 @@
 package com.example.TCMFriend.Dto;
 
-
-public class PublicacionDTO {
+public class PublicacionFavoritoDTO {
 	
 	private int publicacionid;
 	private String titulo;
@@ -10,13 +9,14 @@ public class PublicacionDTO {
 	private String url;
 	private String email;
 	private String fecha_pub;
+	private String username;
 	
-	public PublicacionDTO() {
+	public PublicacionFavoritoDTO() {
 		super();
 	}
 
-	public PublicacionDTO(int publicacionid, String titulo, String categoria, String contenido, String url,
-			String email, String fecha_pub) {
+	public PublicacionFavoritoDTO(int publicacionid, String titulo, String categoria, String contenido, String url,
+			String email, String fecha_pub, String username) {
 		super();
 		this.publicacionid = publicacionid;
 		this.titulo = titulo;
@@ -25,6 +25,7 @@ public class PublicacionDTO {
 		this.url = url;
 		this.email = email;
 		this.fecha_pub = fecha_pub;
+		this.username = username;
 	}
 
 	public int getPublicacionid() {
@@ -71,8 +72,8 @@ public class PublicacionDTO {
 		return email;
 	}
 
-	public void setEmail(String username) {
-		this.email = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFecha_pub() {
@@ -83,11 +84,21 @@ public class PublicacionDTO {
 		this.fecha_pub = fecha_pub;
 	}
 
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public String toString() {
-		return "PublicacionDTO [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria=" + categoria
-				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub
-				+ "]";
+		return "PublicacionFavoritoDTO [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria="
+				+ categoria + ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub="
+				+ fecha_pub + ", username=" + username + "]";
 	}
-}
+	
+	
 
+}

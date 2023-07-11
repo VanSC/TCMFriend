@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.TCMFriend.Dto.PublicacionDTO;
-import com.example.TCMFriend.Dto.UsuarioDTO;
 import com.example.TCMFriend.Entity.Publicacion;
 import com.example.TCMFriend.Service.PublicacionService;
 
@@ -35,7 +34,7 @@ public class PublicacionController {
 	
 	@PostMapping(path = "/save")
 	public String guardarPublicacion(@RequestBody PublicacionDTO publicacionDTO) {
-		String pub = publicacionService.addPublicacion(publicacionDTO);
+		String pub = publicacionService.guardarPublicacion(publicacionDTO);
 		return pub;
 	}
 	
