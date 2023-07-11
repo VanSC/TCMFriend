@@ -20,11 +20,11 @@ public class Publicacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int publicacionid;
 	
-	@Column(name="publicacion_categoria", length = 200)
-	private String categoria;
-	
 	@Column(name="publicacion_titulo", length = 200)
 	private String titulo;
+	
+	@Column(name="publicacion_categoria", length = 200)
+	private String categoria;
 	
 	@Column(name="publicacion_contenido", length = 400)
 	private String contenido;
@@ -43,12 +43,12 @@ public class Publicacion {
 		super();
 	}
 
-	public Publicacion(int publicacionid, String categoria, String titulo, String contenido, String url,
-			String email, String fecha_pub) {
+	public Publicacion(int publicacionid, String titulo, String categoria, String contenido, String url, String email,
+			String fecha_pub) {
 		super();
 		this.publicacionid = publicacionid;
-		this.categoria = categoria;
 		this.titulo = titulo;
+		this.categoria = categoria;
 		this.contenido = contenido;
 		this.url = url;
 		this.email = email;
@@ -63,20 +63,20 @@ public class Publicacion {
 		this.publicacionid = publicacionid;
 	}
 
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-
 	public String getTitulo() {
 		return titulo;
 	}
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 
 	public String getContenido() {
@@ -99,8 +99,8 @@ public class Publicacion {
 		return email;
 	}
 
-	public void setEmail(String username) {
-		this.email = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFecha_pub() {
@@ -113,13 +113,8 @@ public class Publicacion {
 
 	@Override
 	public String toString() {
-		return "Publicacion [publicacionid=" + publicacionid + ", categoria=" + categoria + ", titulo=" + titulo
-				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub
-				+ "]";
+		return "Publicacion [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria=" + categoria
+				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub + "]";
 	}
-	
-	/**@ManyToOne(optional = false,fetch = FetchType.EAGER)
-	@JoinColumn(name="usuario_id",nullable = false)
-	private Usuario usuario;*/
 	
 }

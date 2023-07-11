@@ -71,8 +71,8 @@ public class PublicacionDTO {
 		return email;
 	}
 
-	public void setEmail(String username) {
-		this.email = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFecha_pub() {
@@ -86,8 +86,8 @@ public class PublicacionDTO {
 	@Override
 	public String toString() {
 		return "PublicacionDTO [publicacionid=" + publicacionid + ", titulo=" + titulo + ", categoria=" + categoria
-				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub
-				+ "]";
+				+ ", contenido=" + contenido + ", url=" + url + ", email=" + email + ", fecha_pub=" + fecha_pub + "]";
 	}
+	
 }
 
