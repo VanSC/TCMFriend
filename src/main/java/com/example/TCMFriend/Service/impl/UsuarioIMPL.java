@@ -80,10 +80,11 @@ public class UsuarioIMPL implements UsuarioService {
 	public String updateUsuario(String email, UsuarioDTO usuarioDTO) {
 	    	Usuario username = usuarioRepo.findByEmail(email);
 	    	//username.setEmail(usuarioDTO.getEmail());
-	    	//username.setNombre(usuarioDTO.getNombre());
+	    	username.setNombre(usuarioDTO.getNombre());
+	    	username.setApellido(usuarioDTO.getApellido());
 	    	//username.setPassword(this.passwordEncoder.encode(usuarioDTO.getPassword()));
-	    	//username.setCiclo(usuarioDTO.getCiclo());
-	    	//username.setCarrera(usuarioDTO.getCarrera());
+	    	username.setCiclo(usuarioDTO.getCiclo());
+	    	username.setCarrera(usuarioDTO.getCarrera());
 	    	username.setDescripcion(usuarioDTO.getDescripcion());
 	    	
 	    	usuarioRepo.save(username);
